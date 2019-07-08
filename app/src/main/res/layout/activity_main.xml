@@ -40,11 +40,11 @@
 
             <Button
                 android:layout_width="match_parent"
+                android:id="@+id/button_goal_A"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="goalForTeamA"
                 android:text="Goal"
                 android:textAllCaps="true"
                 android:textColor="#ffffff" />
@@ -62,12 +62,12 @@
                 android:textSize="56sp" />
 
             <Button
+                android:id="@+id/button_foul_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="24dp"
-                android:onClick="foulForTeamA"
                 android:text="Foul"
                 android:textAllCaps="true"
                 android:textColor="#ffffff" />
@@ -109,12 +109,12 @@
                 android:textSize="56sp" />
 
             <Button
+                android:id="@+id/button_goal_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginRight="24dp"
-                android:onClick="goalForTeamB"
                 android:text="Goal"
                 android:textAllCaps="true"
                 android:textColor="#ffffff" />
@@ -132,12 +132,12 @@
                 android:textSize="56sp" />
 
             <Button
+                android:id="@+id/button_foul_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="24dp"
-                android:onClick="foulForTeamB"
                 android:text="Foul"
                 android:textAllCaps="true"
                 android:textColor="#ffffff" />
@@ -146,12 +146,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="32dp"
-        android:onClick="resetScore"
         android:text="Reset"
         android:textAllCaps="true"
         android:textColor="#ffffff" />
