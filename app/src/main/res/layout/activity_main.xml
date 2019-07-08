@@ -1,158 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/score_label"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_top"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/football"
+        tools:srcCompat="@drawable/football" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <!-- Team A Section -->
+    <TextView
+        android:id="@+id/textView"
+        style="@style/team_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/team_a"
+        app:layout_constraintEnd_toEndOf="@+id/team_a_score"
+        app:layout_constraintStart_toStartOf="@+id/team_a_score"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Team A"
-                android:textColor="#616161"
-                android:textSize="14sp" />
+    <TextView
+        android:id="@+id/team_a_score"
+        style="@style/score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/score_label"
+        app:layout_constraintEnd_toEndOf="@+id/button_goal_A"
+        app:layout_constraintStart_toStartOf="@+id/button_goal_A"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <TextView
-                android:id="@+id/team_a_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-light"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
+    <Button
+        android:id="@+id/button_goal_A"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/goal_label"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/team_a_score" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:id="@+id/button_goal_A"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginRight="24dp"
-                android:text="Goal"
-                android:textAllCaps="true"
-                android:textColor="#ffffff" />
+    <TextView
+        android:id="@+id/team_a_foul"
+        style="@style/score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/score_label"
+        app:layout_constraintEnd_toEndOf="@+id/button_foul_A"
+        app:layout_constraintStart_toStartOf="@+id/button_foul_A"
+        app:layout_constraintTop_toBottomOf="@+id/button_goal_A" />
 
-
-            <TextView
-                android:id="@+id/team_a_foul"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-light"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
-
-            <Button
-                android:id="@+id/button_foul_A"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="24dp"
-                android:text="Foul"
-                android:textAllCaps="true"
-                android:textColor="#ffffff" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray" />
+    <Button
+        android:id="@+id/button_foul_A"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/foul_label"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/team_a_foul" />
 
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <View
+        android:id="@+id/view"
+        style="@style/Divider"
+        app:layout_constraintBottom_toBottomOf="@+id/button_foul_A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Team B"
-                android:textColor="#616161"
-                android:textSize="14sp" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
 
-            <TextView
-                android:id="@+id/team_b_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-light"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
+    <!-- Team B Section -->
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/team_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/team_b"
+        app:layout_constraintEnd_toEndOf="@+id/team_b_score"
+        app:layout_constraintStart_toStartOf="@+id/team_b_score"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
-            <Button
-                android:id="@+id/button_goal_B"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginRight="24dp"
-                android:text="Goal"
-                android:textAllCaps="true"
-                android:textColor="#ffffff" />
+    <TextView
+        android:id="@+id/team_b_foul"
+        style="@style/score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/score_label"
+        app:layout_constraintEnd_toEndOf="@+id/button_foul_B"
+        app:layout_constraintStart_toStartOf="@+id/button_foul_B"
+        app:layout_constraintTop_toBottomOf="@+id/button_goal_B" />
 
+    <Button
+        android:id="@+id/button_goal_B"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/goal_label"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/team_b_score" />
 
-            <TextView
-                android:id="@+id/team_b_foul"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="16dp"
-                android:fontFamily="sans-serif-light"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
+    <TextView
+        android:id="@+id/team_b_score"
+        style="@style/score_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="@string/score_label"
+        app:layout_constraintEnd_toEndOf="@+id/button_goal_B"
+        app:layout_constraintStart_toStartOf="@+id/button_goal_B"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <Button
-                android:id="@+id/button_foul_B"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="24dp"
-                android:text="Foul"
-                android:textAllCaps="true"
-                android:textColor="#ffffff" />
-
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/button_foul_B"
+        style="@style/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/foul_label"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/team_b_foul" />
 
     <Button
         android:id="@+id/button_reset"
+        style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"
-        android:text="Reset"
-        android:textAllCaps="true"
-        android:textColor="#ffffff" />
-</RelativeLayout>
+        android:text="@string/reset_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+</android.support.constraint.ConstraintLayout>
