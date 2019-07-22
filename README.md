@@ -4,4 +4,6 @@
 ### Design and implement an app to track scores between two teams playing a game.
 The app keeps the score of a football match. 
 
-<img src="https://www.dropbox.com/s/eo3mnx3t9blao65/%232%20Score%20Keeper.png?raw=1" width="270">
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/48848704/61653257-2f5c8d80-acba-11e9-9f64-a95d6d032164.gif" width="290">
+</div>
